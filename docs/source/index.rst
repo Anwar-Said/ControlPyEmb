@@ -26,6 +26,13 @@ Welcome to ControlPyEmb
 
 .. toctree::
    :maxdepth: 2
+   :caption: CTRL Embedding:
+
+   CTRL_embedding
+
+
+.. toctree::
+   :maxdepth: 2
    :caption: Datasets:
 
    datasets

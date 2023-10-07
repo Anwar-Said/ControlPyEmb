@@ -4,12 +4,14 @@ import numpy.linalg as LA
 import numpy as np
 
 def get_ctrl_emb(G,num_iterations = 30):
-    """control-based graph embedding from `"Network Controllability Perspectives on Graph Representation"` paper.  
+    """Control-based graph embedding from `"Network Controllability Perspectives on Graph Representation" <https://openreview.net/pdf?id=N6iz-EQkuar>`_ paper.  This work employs a unique approach grounded in networked control system theory to obtain expressive graph representations defined as CTRL descriptor, with desired properties. 
 
     Args:
         G (networkx): a networkx graph
-        num_iterations (int, optional): number of iterations to be repeated. Defaults to 30.
-        Return: Embedding vector
+
+        num_iterations (int, optional): number of iterations to be repeated. Default is 30.
+
+        Return: Embedding dictionary
 
     """
 
