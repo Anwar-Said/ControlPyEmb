@@ -13,7 +13,7 @@ sys.path.insert(0,os.path.abspath("../.."))
 source_suffix = '.rst' 
 master_doc = 'index'
 
-project = 'controlPyEmb'
+project = 'ControlPyEmb'
 copyright = '2023, Anwar Said'
 author = 'Anwar Said'
 release = '0.0.6'
