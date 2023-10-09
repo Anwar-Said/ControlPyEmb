@@ -3,18 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ControlPyEmb.ctrl &mdash; controlPyEmb 0.0.6 documentation</title>
+  <title>ControlPyEmb.ctrl &mdash; ControlPyEmb 0.0.6 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/documentation_options.js?v=1fd71caa"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -29,7 +27,7 @@
           
           
           <a href="../../index.html" class="icon icon-home">
-            controlPyEmb
+            ControlPyEmb
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -66,7 +64,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">controlPyEmb</a>
+          <a href="../../index.html">ControlPyEmb</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -90,7 +88,9 @@
 <span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">LA</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<div class="viewcode-block" id="get_ctrl_emb"><a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.get_ctrl_emb">[docs]</a><span class="k">def</span> <span class="nf">get_ctrl_emb</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">num_iterations</span> <span class="o">=</span> <span class="mi">30</span><span class="p">):</span>
+<div class="viewcode-block" id="get_ctrl_emb">
+<a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.get_ctrl_emb">[docs]</a>
+<span class="k">def</span> <span class="nf">get_ctrl_emb</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">num_iterations</span> <span class="o">=</span> <span class="mi">30</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Control-based graph embedding from `&quot;Network Controllability Perspectives on Graph Representation&quot; &lt;https://openreview.net/pdf?id=N6iz-EQkuar&gt;`_ paper.  This work employs a unique approach grounded in networked control system theory to obtain expressive graph representations defined as CTRL descriptor, with desired properties. </span>
 
 <span class="sd">    Args:</span>
@@ -211,7 +211,10 @@
 
     <span class="n">desc</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">add_features</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
     <span class="k">return</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span></div>
-<div class="viewcode-block" id="add_multiple_copies"><a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.add_multiple_copies">[docs]</a><span class="k">def</span> <span class="nf">add_multiple_copies</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+
+<div class="viewcode-block" id="add_multiple_copies">
+<a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.add_multiple_copies">[docs]</a>
+<span class="k">def</span> <span class="nf">add_multiple_copies</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
     <span class="n">no_node</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>   
     <span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">convert_node_labels_to_integers</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">ordering</span><span class="o">=</span><span class="s1">&#39;sorted&#39;</span><span class="p">)</span>
@@ -224,7 +227,10 @@
         <span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">convert_node_labels_to_integers</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">ordering</span><span class="o">=</span><span class="s1">&#39;sorted&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">H</span></div>
 
-<div class="viewcode-block" id="trace_deq_seq"><a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.trace_deq_seq">[docs]</a><span class="k">def</span> <span class="nf">trace_deq_seq</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+
+<div class="viewcode-block" id="trace_deq_seq">
+<a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.trace_deq_seq">[docs]</a>
+<span class="k">def</span> <span class="nf">trace_deq_seq</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
     <span class="n">seq</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">))</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
     <span class="n">trc</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
@@ -232,7 +238,10 @@
             <span class="n">trc</span> <span class="o">=</span> <span class="n">idx</span><span class="o">+</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">trc</span></div>
 
-<div class="viewcode-block" id="add_features"><a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.add_features">[docs]</a><span class="k">def</span> <span class="nf">add_features</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+
+<div class="viewcode-block" id="add_features">
+<a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.add_features">[docs]</a>
+<span class="k">def</span> <span class="nf">add_features</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
     <span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
     <span class="n">eig</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
     <span class="n">avg_deg</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span><span class="o">/</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">())</span> <span class="c1"># made it faster</span>
@@ -246,7 +255,10 @@
     <span class="n">trace_DS</span> <span class="o">=</span> <span class="n">trace_deq_seq</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1">#it was different then your implementation kindly read the document again as sent by the dr. Waseem or go through by my implementation</span>
     <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;lap_energy&#39;</span><span class="p">:</span><span class="n">lap_energy</span><span class="p">,</span><span class="s1">&#39;ecc_spectrum&#39;</span><span class="p">:</span><span class="n">largest_eig</span><span class="p">,</span><span class="s1">&#39;ecc_energy&#39;</span><span class="p">:</span><span class="n">energy</span><span class="p">,</span><span class="s1">&#39;wiener_index&#39;</span><span class="p">:</span><span class="n">wiener_index</span><span class="p">,</span><span class="s1">&#39;trace_deg_seq&#39;</span><span class="p">:</span><span class="n">trace_DS</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="compute_metric_dimension"><a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.compute_metric_dimension">[docs]</a><span class="k">def</span> <span class="nf">compute_metric_dimension</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">leaders</span><span class="p">):</span>
+
+<div class="viewcode-block" id="compute_metric_dimension">
+<a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.compute_metric_dimension">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_metric_dimension</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">leaders</span><span class="p">):</span>
     <span class="n">nodes_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span> 
     <span class="n">distance_vec</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodes_list</span><span class="p">:</span>
@@ -255,8 +267,11 @@
     <span class="n">distance_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">distance_vec</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">distance_vec</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
+
         
-<div class="viewcode-block" id="add_vertex"><a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.add_vertex">[docs]</a><span class="k">def</span> <span class="nf">add_vertex</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<div class="viewcode-block" id="add_vertex">
+<a class="viewcode-back" href="../../CTRL_embedding.html#ControlPyEmb.ctrl.add_vertex">[docs]</a>
+<span class="k">def</span> <span class="nf">add_vertex</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">convert_node_labels_to_integers</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">nodes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()))</span>
     <span class="n">new_vertex</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span> 
@@ -265,6 +280,7 @@
         <span class="k">if</span> <span class="n">n</span> <span class="o">!=</span><span class="n">new_vertex</span><span class="p">:</span>
             <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">new_vertex</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">G</span></div>
+
 </pre></div>
 
            </div>
